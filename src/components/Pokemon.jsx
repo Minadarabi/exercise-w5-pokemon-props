@@ -4,29 +4,24 @@
 // Destructure pokemon props here :)
 import { Type }from "./Type.jsx";
 import { Weakness } from "./Weakness.jsx";
+import { Category } from "./Category.jsx";
 
 // eslint-disable-next-line react/prop-types
-export const Pokemon = ({ pokemonObj }) => {
+export const Pokemon = ({ types , weight , height, name, weaknesses , category }) => {
 
-  const renderTypes = ()=>{
-    return pokemonObj.types.map((type) => {
-      return <Type key={type} typePoke={type}/>
-
-    })
-
-  }
-  const renderWeakness = ()=>{
-    return pokemonObj.weeknesses.map((weak)=>{
-      return <Weakness key={weak} weakPoke={weak} />
-    })
-  }
   return (
     <>
-     <ol>Name: {pokemonObj.name}
-        {renderTypes()}
+     <ol>Pokemon Name: {name}
+        
     </ol>
-
-    {renderWeakness()}
+    <p>weight: {weight} kg</p>
+    <p>Height: {height} m2</p>
+    <div>
+      <Type types={types} />
+      <Weakness weaknesses={weaknesses}/>
+      <Category category={category}/>
+    </div>
+    
     </>
    
   )

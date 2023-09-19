@@ -8,7 +8,8 @@ https://reactjs.org/docs/lists-and-keys.html
 */
 // import { Header } from "./components/Headers";
 import { Pokemon } from "./components/Pokemon";
-import data from "./data.json"
+import data from "./data.json";
+import { Header } from "./components/Header";
 // eslint-disable-next-line no-unused-vars
 
 
@@ -21,15 +22,26 @@ export const App = () => {
 
   const pokemonRender = () => {
     return pokemons.map((pokemon) => {
-        return (<Pokemon key={pokemon.id} pokemonObj={pokemon}  />)
+        return (
+        <Pokemon key={pokemon.id}
+         name={pokemon.name}
+          weight={pokemon.weight}
+           height={pokemon.height}
+            types={pokemon.types}
+             weaknesses={pokemon.weeknesses}
+             category={pokemon.category} />)
       });
           
   };
       
   
   return (
-    <div className="App">
+    <>
+    <Header />
+     <div className="App">
       <section>{pokemonRender()}</section> 
     </div>
+    </>
+   
   );
 };
