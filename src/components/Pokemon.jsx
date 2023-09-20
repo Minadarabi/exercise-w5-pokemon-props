@@ -10,7 +10,7 @@ import { Category } from "./Category.jsx";
 export const Pokemon = ({ types , weight , height, name, weaknesses , category }) => {
 
   return (
-    <>
+    <div>
      <ol>Pokemon Name: {name}
         
     </ol>
@@ -22,7 +22,7 @@ export const Pokemon = ({ types , weight , height, name, weaknesses , category }
       <Category category={category}/>
     </div>
     
-    </>
+    </div>
    
   )
 

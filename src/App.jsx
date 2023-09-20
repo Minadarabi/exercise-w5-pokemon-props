@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 /*
 Using the data.json you will create a list of pokemons.
 We've created the necessary components for you, now it's
@@ -21,15 +23,15 @@ export const App = () => {
   const pokemons = data.pokemons;
 
   const pokemonRender = () => {
-    return pokemons.map((pokemon) => {
+    return pokemons.map(({id , name , weight , height , types ,weaknesses , category }) => {
         return (
-        <Pokemon key={pokemon.id}
-         name={pokemon.name}
-          weight={pokemon.weight}
-           height={pokemon.height}
-            types={pokemon.types}
-             weaknesses={pokemon.weeknesses}
-             category={pokemon.category} />)
+        <Pokemon key={id}
+         name={name}
+          weight={weight}
+           height={height}
+            types={types}
+             weaknesses={weaknesses}
+             category={category} />)
       });
           
   };

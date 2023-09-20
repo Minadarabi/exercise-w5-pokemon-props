@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
-export const Weakness = ({weakPoke})=>{
+export const Weakness = ({weaknesses})=>{
     return(
         <>
         <strong>Weaknesses:</strong>
-        {weakPoke.map((weak)=>{
-            <p key={weak}>{weak}</p>
+        {weaknesses.map((weak)=>{
+            return(
+                <p key={weak}>{weak}</p>
+
+            )
+            
 
         })}
         </>
